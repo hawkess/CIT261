@@ -1,0 +1,104 @@
+.body-content
+{
+  margin-top: 5%;
+}
+
+.code
+{
+  font-family: monospace;
+}
+
+.container-fluid
+{
+  padding: 0 15%;
+}
+
+.footer-container
+{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.header
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 225px;
+}
+
+.header-content
+{
+  padding: 2% 0;
+}
+
+.heading-lg {
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1.5;
+  font-family: "Playfair Display", serif;
+}
+
+.links
+{
+  padding: 15px 0;
+
+}
+
+.links a:after{
+  content: "";
+  display: block;
+  height: 0;
+  width: 1px;
+}
+
+.loop-content
+{
+  visibility: hidden;
+}
+
+.primary-bg
+{
+  background-color: #ff4c68;
+}
+
+.project-link
+{
+  font-family: "Lato", sans-serif;
+  color: #000;
+}
+
+.subheading
+{
+  font-family: "Lato", sans-serif;
+}
+
+.text-light
+{
+  color: #fff;
+}
+
+.title
+{
+  font-family: "Playfair Display", serif;
+  color: #fff;
+}
+
+a
+{
+  color: #fff;
+}
+
+body
+{
+  font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+body a
+{
+  color: #ff4c68;
+}

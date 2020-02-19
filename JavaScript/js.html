@@ -8,11 +8,12 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/js.css">
 
   <!-- Scripts -->
-  <script src="scripts/jstest.js"></script>
+  <script src="scripts/javascript.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -53,24 +54,24 @@
         in that
         block is executed until a <span class="code">break</span> statement is encountered.
       </p>
-      <div class="code">
+      <p class="code">
         if (condition) {</br>
         &nbsp;&nbsp;code to execute</br>
         }
         (optional) else {</br>
         &nbsp;&nbsp;code to execute in the negative case;</br>
         }</br></br>
-      </div>
+      </p>
 
       <span class="code">If</span> can be chained with <span class="code">else</span> to form <span class="code">else if</span> statements with an added condition.</br></br>
-      <div class="code">
+      <p class="code">
         if (condition) {</br>
         &nbsp;&nbsp;code to execute</br>
         }
         else if (secondary condition){</br>
         &nbsp;&nbsp;code to execute in the negative case;</br>
         }
-      </div>
+      </p>
 
     </div>
     <div>
@@ -80,57 +81,59 @@
         <span class="code">for</span> loops make it easy to repeat an action for a discrete number of iterations and <span class="code">while/do...while</span> loops allow for indefinite continuation until a condition is met,
         such as a sentinel value being set. Conditional statements are an integral part of the loop control structure.</br>
 
-        <div class="code">for (initial expression; condition; post expression){ code to execute; }</br>
-          for (var i = 0; i < 5; i++) { console.log(i); } //prints 0-4 to the console, at which point i is no longer < 5 and execution stops.</br> </br> while (condition) { code to execute; };</br> while (i !=5) { i++; } //continues until i==5 </div>
+        <p class="code">for (initial expression; condition; post expression){ code to execute; }</br>
+          for (var i = 0; i < 5; i++) { console.log(i); } //prints 0-4 to the console, at which point i is no longer < 5 and execution stops.</br> </br> while (condition) { code to execute; };</br> while (i !=5) { i++; } //continues until i==5 </p>
             </p> <form id="loop-form">
             <label for="loop-count">Number of times to loop?</label>
             <input type="text" name="loop-count" id="loop-count" placeholder="" />
             <input type="button" onclick="loopTest()" value="Submit" />
             </form>
             <div id="loop-content">
-              <p>
-
-              </p>
             </div>
-        </div>
-        <div>
-          <h3>Functions</h3>
-          <p>
-            Functions are a way of naming blocks of code to be executed. These blocks of code are declared, given a name, and any variables that are needed are identified as parameters,
-            then the block of code can be reused by calling the name given to them and passing any parameters needed in parentheses. This allows for a common action to be repeated multiple times
-            without replicating the code.
-          </p>
-        </div>
-        <div>
-          <h3>Arrays & Associative Arrays</h3>
-          <p>
-            Arrays are a data structure that allow multiple values to be stored in the same container. They can be used to store a list of strings, numbers,
-            Objects, etc. Array notation can be used to access each element using brackets, starting from index 0 for the first element.
-          </p>
-          <p class="code">
-            var arrayExample = ["this", "is", "an", "example"]; </br>
-            arrayExample[1] returns the value "is".
-          </p>
-          <p>
-            Associative arrays are arrays that use strings as keys to access elements instead of numerical indice. Javascript does not support associative arrays, but <a href="Objects/objects.html">Objects</a> and the dot notation can be used to
-            simulate associate arrays.
-            <p class="code">
-              var notValid = ["firstname" = "John", "lastname" = "Smith"];
-            </p>
-          </p>
-        </div>
+    </div>
+    <div>
+      <h3>Functions</h3>
+      <p>
+        Functions are a way of naming blocks of code to be executed. These blocks of code are declared, given a name, and any variables that are needed are identified as parameters,
+        then the block of code can be reused by calling the name given to them and passing any parameters needed in parentheses. This allows for a common action to be repeated multiple times
+        without replicating the code.
+      </p>
+      <p class="code">
+        function functionName(optional parameters) {</br>
+        &nbsp;&nbsp;code to be executed;</br>
+        }</br></br>
+      </p>
+    </div>
+    <div>
+      <h3>Arrays & Associative Arrays</h3>
+      <p>
+        Arrays are a data structure that allow multiple values to be stored in the same container. They can be used to store a list of strings, numbers,
+        Objects, etc. Array notation can be used to access each element using brackets, starting from index 0 for the first element.
+      </p>
+      <p class="code">
+        var arrayExample = ["this", "is", "an", "example"]; </br>
+        arrayExample[1] returns the value "is".
+      </p>
+      <p>
+        Associative arrays are arrays that use strings as keys to access elements instead of numerical indice. Javascript does not support associative arrays, but <a href="objects.html">Objects</a> and dot notation can be used to
+        simulate associative arrays.
+        <p class="code">
+          var notValid = ["firstname" = "John", "lastname" = "Smith"];
+        </p>
+      </p>
+    </div>
 </body>
 <footer>
-  <div class="container-fluid">
+  <div class="footer-container">
     <div class="row">
-      <div class="col-sm-6">
-        <i class="fas fa-arrow-circle-left"></i><a href="">Previous Lesson</a>
+      <div class="col-md">
+        <i class="footer-icon fas fa-arrow-circle-left fa-md"></i><a href="index.html">Previous</a>
       </div>
-      <div class="col-sm-6">
-        <a href="../index.html">Home</a>
+      <div class="col-md">
+        <a href="index.html">Home</a>
       </div>
-      <div class="col-sm-6">
-        <a href="">Next Lesson</a><i class="fas fa-arrow-circle-left"></i>
+      <div class="col-md">
+        <a href="">Next</a><i class="footer-icon fas fa-arrow-circle-left"></i>
       </div>
     </div>
   </div>
