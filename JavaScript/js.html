@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>CS261 Javascript</title>
@@ -8,9 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <link rel="stylesheet" href="css/js.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Scripts -->
   <script src="scripts/javascript.js"></script>
@@ -22,9 +20,8 @@
 </head>
 
 <body>
-  <div class="header primary-bg container-fluid">
+  <div class="header primary-bg container">
     <div class="header-content">
-    </div>
     <div class="name text-light">
       <h1 class="heading-lg">Sean Hawkes</h1>
     </div>
@@ -32,44 +29,45 @@
       <h2>JavaScript - Variables, Loops, Conditional Statements, Functions, Arrays, & Associative Arrays</h2>
     </div>
   </div>
+</div>
   <div class="body-content container-fluid">
     <div>
       <h3>Variables</h3>
       <p>
         Variables are used to give a name to data so that it can be used again later. In Javascript, variables are created with the <span class="code">var</span> keyword
         and are mutable so the data can be changed. Since Javascript is dynamically and weakly typed, there is no requirement to declare a type. The type of the variable will change based on the data assigned to it.
+      </p>
         <p class="code">
-          var testVariable = 1;</br>
+          var testVariable = 1;<br>
           testVariable = "This is now a string.";
         </p>
-      </p>
     </div>
     <div>
       <h3>Conditional Statements</h3>
       <p>
         Conditional statements provide for a method to control the execution of statements based on the result of a boolean expression, explicit or implicit. Using <span class="code">switch, if, then,</span> and <span class="code">else</span>
-        values directly, or comparison operators such as <span class="code">>, <,>=, <=,==,===, !=,</span> <span class="code">!==</span>. When the conditional statement evaluates to true, the code in the block is executed, otherwise it is skipped
+        values directly, or comparison operators such as <span class="code">&lt;, &gt;, &lt;=, &gt;=, ==, ===, !=,</span> <span class="code">!==</span>. When the conditional statement evaluates to true, the code in the block is executed, otherwise it is skipped
         over.
         <span class="code">else</span> allows for code to be executed in the case where the condition is not met. Switch statements provide a way of making a selection based on a list of conditions. When one condition evaluates to true, the code
         in that
         block is executed until a <span class="code">break</span> statement is encountered.
       </p>
       <p class="code">
-        if (condition) {</br>
-        &nbsp;&nbsp;code to execute</br>
+        if (condition) {<br>
+        &nbsp;&nbsp;code to execute<br>
         }
-        (optional) else {</br>
-        &nbsp;&nbsp;code to execute in the negative case;</br>
-        }</br></br>
+        (optional) else {<br>
+        &nbsp;&nbsp;code to execute in the negative case;<br>
+        }<br><br>
       </p>
 
-      <span class="code">If</span> can be chained with <span class="code">else</span> to form <span class="code">else if</span> statements with an added condition.</br></br>
+      <span class="code">If</span> can be chained with <span class="code">else</span> to form <span class="code">else if</span> statements with an added condition.<br><br>
       <p class="code">
-        if (condition) {</br>
-        &nbsp;&nbsp;code to execute</br>
+        if (condition) {<br>
+        &nbsp;&nbsp;code to execute<br>
         }
-        else if (secondary condition){</br>
-        &nbsp;&nbsp;code to execute in the negative case;</br>
+        else if (secondary condition){<br>
+        &nbsp;&nbsp;code to execute in the negative case;<br>
         }
       </p>
 
@@ -79,11 +77,13 @@
       <p>
         Loops can be used to perform a set of instructions repeatedly until a condition is met. Javascript supports <span class="code">for, while,</span> and <span class="code">do...while</span> loops.
         <span class="code">for</span> loops make it easy to repeat an action for a discrete number of iterations and <span class="code">while/do...while</span> loops allow for indefinite continuation until a condition is met,
-        such as a sentinel value being set. Conditional statements are an integral part of the loop control structure.</br>
+        such as a sentinel value being set. Conditional statements are an integral part of the loop control structure.<br>
 
-        <p class="code">for (initial expression; condition; post expression){ code to execute; }</br>
-          for (var i = 0; i < 5; i++) { console.log(i); } //prints 0-4 to the console, at which point i is no longer < 5 and execution stops.</br> </br> while (condition) { code to execute; };</br> while (i !=5) { i++; } //continues until i==5 </p>
-            </p> <form id="loop-form">
+        <p class="code">for (initial expression; condition; post expression){ code to execute; }<br>
+          for (var i = 0; i &lt; 5; i++) { console.log(i); } //prints 0-4 to the console, at which point i is no longer &lt; 5 and execution stops.<br> <br> while (condition) { code to execute; };<br>
+          while (i !=5) { i++; } //continues until i==5<br>
+        </p>
+            <form id="loop-form">
             <label for="loop-count">Number of times to loop?</label>
             <input type="text" name="loop-count" id="loop-count" placeholder="" />
             <input type="button" onclick="loopTest()" value="Submit" />
@@ -99,9 +99,9 @@
         without replicating the code.
       </p>
       <p class="code">
-        function functionName(optional parameters) {</br>
-        &nbsp;&nbsp;code to be executed;</br>
-        }</br></br>
+        function functionName(optional parameters) {<br>
+        &nbsp;&nbsp;code to be executed;<br>
+        }<br><br>
       </p>
     </div>
     <div>
@@ -111,7 +111,7 @@
         Objects, etc. Array notation can be used to access each element using brackets, starting from index 0 for the first element.
       </p>
       <p class="code">
-        var arrayExample = ["this", "is", "an", "example"]; </br>
+        var arrayExample = ["this", "is", "an", "example"]; <br>
         arrayExample[1] returns the value "is".
       </p>
       <p>
@@ -122,18 +122,19 @@
         </p>
       </p>
     </div>
+  </div>
 </body>
 <footer>
   <div class="footer-container">
     <div class="row">
       <div class="col-md">
-        <i class="footer-icon fas fa-arrow-circle-left fa-md"></i><a href="index.html">Previous</a>
+        <a href="index.html">Previous</a>
       </div>
       <div class="col-md">
         <a href="index.html">Home</a>
       </div>
       <div class="col-md">
-        <a href="">Next</a><i class="footer-icon fas fa-arrow-circle-left"></i>
+        <a href="">Next</a>
       </div>
     </div>
   </div>
