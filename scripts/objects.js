@@ -9,8 +9,8 @@ function objectTest()
   var personObj = new Employee(firstName, lastName, age);
   var employeeObj = new Employee(firstName, lastName, age, job);
   {
-    display.innerHTML += JSON.stringify(personObj) + "<br />";
-    display.innerHTML += JSON.stringify(employeeObj) + "<br />";
+    display.innerHTML += "Parent Person Object: " + JSON.stringify(personObj) + "<br />";
+    display.innerHTML += "Employee Object with inherited properties plus new occupation property: " + JSON.stringify(employeeObj) + "<br />";
     display.setAttribute("style", "visibility: visible;");
   }
 }
@@ -22,6 +22,6 @@ function Person(first, last, age) {
 }
 
 function Employee(first, last, age, job) {
-  Person.call(first, last, age);
+  Person.call(this, first, last, age);
   this.occupation = job;
 }

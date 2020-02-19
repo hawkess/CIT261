@@ -12,5 +12,10 @@ function loopTest()
 function arrayTest()
 {
   var str = document.getElementById("array-input").value;
-  document.getElementById("array-content").innerHTML = str.split(", ");
+  var arr = str.split(", ");
+  var len = arr.length;
+  document.getElementById("array-content").innerHTML += "Array: " + arr + "<br />";
+  document.getElementById("array-content").innerHTML += "Array Length: " + len + "<br />";
+  document.getElementById("array-content").innerHTML += "Array[0]: " + arr[0] + "<br />";
+  document.getElementById("array-content").innerHTML += "Array[" + String(len - 1) + "]: " + arr[len - 1] + "<br />";
 }

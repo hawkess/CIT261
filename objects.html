@@ -37,19 +37,20 @@
         <section id="properties">
           <h3>Properties</h3>
           <p>
-            Objects in JavaScript are a way to create a collection of properties that describe an abstract item. Object properties are given names which serve as keys and values may be attached to those keys upon creation, or assigned to the key
+            Objects in JavaScript are a way to create a collection of properties that describe an abstract item. Object properties are given names which serve as keys, and values may be attached to those keys upon creation or assigned to the property
             later.
             If a key is created with no value assigned to it,
-            its value is considered undefined. Because properties are created as key/value pairs, they are stored as strings and can be written out in <a href="json.html#stringify">JSON</a>. The properties of an object are accessed using what is known as dot
+            its value is considered undefined. Because properties are created as key/value pairs, they are stored as strings and can be written out in <a href="json.html#stringify">JSON</a>. The properties of an object are accessed using what is
+            known as dot
             notation because it takes the form
-            objectName.objectProperty.<br />
+            <span class="code">objectName.objectProperty.</span>
           </p>
           <p class="code code-div">
             var studentRecord = new Object();<br />
             studentRecord.firstName = "John";<br />
             studentRecord.lastName = "Smith";<br />
             studentRecord.gpa = 3.2;<br />
-            studentRecord.gradYear = 2024;<br />
+            studentRecord.gradYear = 2024;
           </p>
         </section>
         <section id="creation">
@@ -57,13 +58,13 @@
           <p>
             Objects can be created in a few different ways. The example above uses the <span class="code">new</span> keyword to create a new object and then bootstraps new properties by assigning values to them. Objects can also be created with
             existing properties by assigning an object literal to an object variable.
-
           </p>
           <p class="code code-div">
-            var usedCar = { make: "Honda", model: "Civic", year: "2005" mileage: "204,281"};<br />
+            var usedCar = { make: "Honda", model: "Civic", year: "2005" mileage: "204,281"};
           </p>
           <p>
-            Objects can be created from other objects by using the built-in <span class="code">create()</span> method. This creates a new object with the same properties as the object that was passed as a <a href="js.html#functions">parameter</a> to the method, and then this object
+            Objects can be created from other objects by using the built-in <span class="code">create()</span> method. This creates a new object with the same properties as the object that was passed as a <a href="js.html#functions">parameter</a> to
+            the method, and then this object
             can be modified separately.
           </p>
           <p class="code code-div">
@@ -79,10 +80,11 @@
               &nbsp;&nbsp;this.lastName = lastName;<br />
               &nbsp;&nbsp;this.position = position;<br />
               &nbsp;&nbsp;this.salary = salary;<br />
-              }<br /><br />
-
+              }
+            </p>
+            <p class="code code-div">
               var firstEmployee = new Employee("Armando", "Garbanzo", "Marketing Director", 250000);<br />
-              var secondEmployee = new Employee("John", "Jingleheimerschmidt", "VFX Artist", 80000);<br />
+              var secondEmployee = new Employee("John", "Jingleheimerschmidt", "VFX Artist", 80000);
             </p>
           </p>
         </section>
@@ -111,7 +113,8 @@
             properties. Every object in JavaScript inherits from some basic prototype which is what gives JavaScript much of its base functionality, but it is also possible to define a parent for an object to inherit from. This is part of
             object-oriented programming and allows for relationships between objects to
             be represented and abstracted.<br />
-            Imagine attempting to define all of the characteristics of an animal—there are a lot of them. However, all animals have a name, all animals have some sort of coloration, all animals have a habitat, etc. Rather than replicating the definition of these
+            Imagine attempting to define all of the characteristics of an animal—there are a lot of them. However, all animals have a name, all animals have some sort of coloration, all animals have a habitat, etc. Rather than replicating the
+            definition of these
             properties for every single object we want to create, we can create a generic Animal object
             from which all other animals inherit those basic characteristics, and then define the parts that make each animal unique in their own object instance.
           </p>
@@ -120,14 +123,18 @@
             &nbsp;&nbsp;this.species = species;<br />
             &nbsp;&nbsp;this.color = color;<br />
             &nbsp;&nbsp;this.area = area;<br />
-            }<br /><br />
+            }
+          </p>
+          <p class="code code-div">
             function Bird(species, color, area, wingspan, area, canFly)<br / />
             {<br />
             &nbsp;&nbsp;Animal.call(this, species, color, area);<br />
             &nbsp;&nbsp;this.wingspan = wingspan;<br />
             &nbsp;&nbsp;this.canFly = canFly;<br />
             &nbsp;&nbsp;this.food = food;<br />
-            }<br /><br />
+            }
+          </p>
+          <p class="code code-div">
             var buzzard = new Bird("Buteo buteo", "Brown", "100cm", "Central Europe", true);<br />
           </p>
           <p>
@@ -137,13 +144,15 @@
         </section>
         <section id="examples">
           <h3>Examples</h3>
-          <form id="object-form">
-          <input type="text" name="first-name" id="first-name" placeholder="First name" />
-          <input type="text" name="last-name" id="last-name" placeholder="Last name" />
-          <input type="text" name="age" id="age" placeholder="Age" />
-          <input type="text" name="occupation" id="job" placeholder="Occupation" />
-          <input type="button" onclick="objectTest()" value="Submit" />
-          </form>
+          <div class="form-content">
+            <form id="object-form">
+              <input type="text" name="first-name" id="first-name" placeholder="First name" />
+              <input type="text" name="last-name" id="last-name" placeholder="Last name" />
+              <input type="text" name="age" id="age" placeholder="Age" />
+              <input type="text" name="occupation" id="job" placeholder="Occupation" />
+              <input type="button" onclick="objectTest()" value="Submit" />
+            </form>
+          </div>
           <div id="object-content">
           </div>
         </section>
