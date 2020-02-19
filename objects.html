@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CS261 JavaScript</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Scripts -->
+  <script src="scripts/objects.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <div class="content-container">
+    <div class="header primary-bg container-fluid">
+      <div class="header-content">
+        <div class="name text-light">
+          <h1 class="heading-lg">Sean Hawkes</h1>
+        </div>
+        <div class="text-light">
+          <h2>JavaScript - Object Creation, Inheritance, Properties, Methods, Instantiation</h2>
+        </div>
+      </div>
+    </div>
+    <div class="body-content container-fluid">
+      <div>
+        <section id="properties">
+          <h3>Properties</h3>
+          <p>
+            Objects in JavaScript are a way to create a collection of properties that describe an abstract item. Object properties are given names which serve as keys and values may be attached to those keys upon creation, or assigned to the key
+            later.
+            If a key is created with no value assigned to it,
+            its value is considered undefined. Because properties are created as key/value pairs, they are stored as strings and can be written out in <a href="json.html#stringify">JSON</a>. The properties of an object are accessed using what is known as dot
+            notation because it takes the form
+            objectName.objectProperty.<br />
+          </p>
+          <p class="code code-div">
+            var studentRecord = new Object();<br />
+            studentRecord.firstName = "John";<br />
+            studentRecord.lastName = "Smith";<br />
+            studentRecord.gpa = 3.2;<br />
+            studentRecord.gradYear = 2024;<br />
+          </p>
+        </section>
+        <section id="creation">
+          <h3>Creation/Instantiation</h3>
+          <p>
+            Objects can be created in a few different ways. The example above uses the <span class="code">new</span> keyword to create a new object and then bootstraps new properties by assigning values to them. Objects can also be created with
+            existing properties by assigning an object literal to an object variable.
+
+          </p>
+          <p class="code code-div">
+            var usedCar = { make: "Honda", model: "Civic", year: "2005" mileage: "204,281"};<br />
+          </p>
+          <p>
+            Objects can be created from other objects by using the built-in <span class="code">create()</span> method. This creates a new object with the same properties as the object that was passed as a <a href="js.html#functions">parameter</a> to the method, and then this object
+            can be modified separately.
+          </p>
+          <p class="code code-div">
+            let studentTwo = Object.create(studentRecord);
+          </p>
+          <p>
+            Another option is using a constructor function along with the <span class"code">new</span> keyword to create an instance of an object. This is particularly helpful when a number of objects with the same properties need to be created and
+            initialized with different values. By passing in values as parameters, each instance of the object can be given different starting values for each property. Constructor functions are named after the base object with a capital
+            letter to denote it is a constructor function. The <span class="code">this</span> keyword used in the example refers to the object that the function was called on, in this case the new Employee object.
+            <p class="code code-div">
+              function Employee(firstName, lastName, position, salary) {<br />
+              &nbsp;&nbsp;this.firstName = firstName;<br />
+              &nbsp;&nbsp;this.lastName = lastName;<br />
+              &nbsp;&nbsp;this.position = position;<br />
+              &nbsp;&nbsp;this.salary = salary;<br />
+              }<br /><br />
+
+              var firstEmployee = new Employee("Armando", "Garbanzo", "Marketing Director", 250000);<br />
+              var secondEmployee = new Employee("John", "Jingleheimerschmidt", "VFX Artist", 80000);<br />
+            </p>
+          </p>
+        </section>
+        <section id="methods">
+          <h3>Methods</h3>
+          <p>
+            Functions can be assigned as properties just like other values, allowing you to call a function by using the dot notation to access that property. These are generally used to increase encapsulation by tying functionality to the object
+            rather than having free functions that are called by passing the object.
+          </P>
+          <p class="code code-div">
+            var myPatient = {<br />
+            &nbsp;&nbsp;patientID: 0005101940,<br />
+            &nbsp;&nbsp;heightInFeet: 6.2,<br />
+            &nbsp;&nbsp;weightInPounds: 210,<br />
+            &nbsp;&nbsp;BMI: function() {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return (this.heightInFeet * 12) / (Math.pow(this.weightInPounds, 2));<br />
+            &nbsp;&nbsp;}<br />
+            }
+          </p>
+        </section>
+        <section id="inheritance">
+          <h3>Inheritance</h3>
+          <p>
+            The functionality of objects can be further extended through inheritance. Inheritance allows objects to take on the properties of the objects they inherit from, while retaining their own separate identity and the ability to define their
+            own
+            properties. Every object in JavaScript inherits from some basic prototype which is what gives JavaScript much of its base functionality, but it is also possible to define a parent for an object to inherit from. This is part of
+            object-oriented programming and allows for relationships between objects to
+            be represented and abstracted.<br />
+            Imagine attempting to define all of the characteristics of an animal—there are a lot of them. However, all animals have a name, all animals have some sort of coloration, all animals have a habitat, etc. Rather than replicating the definition of these
+            properties for every single object we want to create, we can create a generic Animal object
+            from which all other animals inherit those basic characteristics, and then define the parts that make each animal unique in their own object instance.
+          </p>
+          <p class="code code-div">
+            function Animal(species, color, area) {<br />
+            &nbsp;&nbsp;this.species = species;<br />
+            &nbsp;&nbsp;this.color = color;<br />
+            &nbsp;&nbsp;this.area = area;<br />
+            }<br /><br />
+            function Bird(species, color, area, wingspan, area, canFly)<br / />
+            {<br />
+            &nbsp;&nbsp;Animal.call(this, species, color, area);<br />
+            &nbsp;&nbsp;this.wingspan = wingspan;<br />
+            &nbsp;&nbsp;this.canFly = canFly;<br />
+            &nbsp;&nbsp;this.food = food;<br />
+            }<br /><br />
+            var buzzard = new Bird("Buteo buteo", "Brown", "100cm", "Central Europe", true);<br />
+          </p>
+          <p>
+            Through inheritance, a new object named <span class="code">buzzard</span> has been created with the Bird constructor that calls the Animal constructor, initializing the Bird object with all of the values from the Animal object constructor
+            and then adding its own properties and assigning values to them based on the parameters passed in. This chain of inheritance can become multiple layers deep with each layer adding its own set of properties to the object profile.
+          </p>
+        </section>
+        <section id="examples">
+          <h3>Examples</h3>
+          <form id="object-form">
+          <input type="text" name="first-name" id="first-name" placeholder="First name" />
+          <input type="text" name="last-name" id="last-name" placeholder="Last name" />
+          <input type="text" name="age" id="age" placeholder="Age" />
+          <input type="text" name="occupation" id="job" placeholder="Occupation" />
+          <input type="button" onclick="objectTest()" value="Submit" />
+          </form>
+          <div id="object-content">
+          </div>
+        </section>
+      </div>
+</body>
+<footer>
+  <div class="footer-container">
+    <div class="row">
+      <div class="col-md">
+        <a href="js.html">Previous</a>
+      </div>
+      <div class="col-md">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="col-md">
+        <a href="json.html">Next</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+</html>
