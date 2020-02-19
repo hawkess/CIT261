@@ -1,0 +1,56 @@
+.accent-bg
+{
+  background-color: #ef8172;
+}
+
+.neutral-bg
+{
+  background-color: #ddd:
+}
+
+.primary-bg
+{
+  background-color: #ff4c68;
+}
+
+.content-cont
+{
+  margin: auto;
+  padding: 15px 20px;
+}
+
+.header
+{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  height: 80px;
+}
+
+.links
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.project-link
+{
+  font-family: "Lato", sans-serif;
+}
+
+.title
+{
+  font-family: "Playfair Display", serif;
+  color: #fff;
+}
+
+body
+{
+  width: 60%;
+  margin: auto;
+}
+
+h1
+{
+  margin: auto;
+}
