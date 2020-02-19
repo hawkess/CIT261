@@ -1,4 +1,4 @@
-function loopTest()
+function objectTest()
 {
   var display = document.getElementById("object-content");
   var firstName = document.getElementById("first-name").value;
