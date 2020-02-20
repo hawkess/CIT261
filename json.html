@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>CS261 Javascript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>CS271 JSON</title>
 
   <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
 
@@ -84,7 +85,7 @@
         <section id="stringify">
           <h3>Stringify</h3>
           <p>
-            <span class="code">JSON.stringify()</span> makes it possible to convert an object (serialize) to the JSON syntax so that it can be passed between client and server, especially via APIs. It can be called with a replacer function or array of values to replace any values that may be considered extraneous, and the string or number of characters used for whitespace can be defined to make it more readable for humans.
+            <span class="code">JSON.stringify()</span> makes it possible to convert an object (serialize) to the JSON syntax so that it can be passed between client and server, which is most commonly seen and especially useful for data passed via APIs. It can be called with a replacer function or array of values to replace or filter any values that may be considered extraneous, and the string or number of characters used for whitespace can be defined to make it more readable for humans.
           </p>
           <p class="code code-div">
             var APIresponse = JSON.stringify(serverDataObject[,replacer function/array[, space string/number of whitespaces]]);
@@ -116,7 +117,7 @@
         <a href="index.html">Home</a>
       </div>
       <div class="col-md">
-        <a href="">Next</a>
+        <a href="ajax.html">Next</a>
       </div>
     </div>
   </div>
