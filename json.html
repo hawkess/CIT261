@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/json.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Scripts -->
-  <script src="scripts/jstest.js"></script>
+  <script src="scripts/json.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -21,87 +21,106 @@
 </head>
 
 <body>
-  <div class="header primary-bg container-fluid">
-    <div class="header-content">
-    </div>
-    <div class="name text-light">
-      <h1 class="heading-lg">Sean Hawkes</h1>
-    </div>
-    <div class="text-light">
-      <h2>JavaScript - Variables, Loops, Conditional Statements, Functions, Arrays, & Associative Arrays</h2>
-    </div>
-  </div>
-  <div class="body-content container-fluid">
-    <div>
-      <h3>Parse</h3>
-
-    </div>
-    <div>
-      <h3>Stringify</h3>
-
-    </div>
-    <div>
-      <h3>Loops</h3>
-      <p>
-        Loops can be used to perform a set of instructions repeatedly until a condition is met. Javascript supports <span class="code">for, while,</span> and <span class="code">do...while</span> loops.
-        <span class="code">for</span> loops make it easy to repeat an action for a discrete number of iterations and <span class="code">while/do...while</span> loops allow for indefinite continuation until a condition is met,
-        such as a sentinel value being set. Conditional statements are an integral part of the loop control structure.</br>
-
-        <div class="code">for (initial expression; condition; post expression){ code to execute; }</br>
-          for (var i = 0; i < 5; i++) { console.log(i); } //prints 0-4 to the console, at which point i is no longer < 5 and execution stops.</br> </br> while (condition) { code to execute; };</br> while (i !=5) { i++; } //continues until i==5 </div>
-            </p> <form id="loop-form">
-            <label for="loop-count">Number of times to loop?</label>
-            <input type="text" name="loop-count" id="loop-count" placeholder="" />
-            <input type="button" onclick="loopTest()" value="Submit" />
-            </form>
-            <div id="loop-content">
-              <p>
-
-              </p>
-            </div>
+  <div class="content-container">
+    <div class="header primary-bg container-fluid">
+      <div class="header-content">
+        <div class="name text-light">
+          <h1 class="heading-lg">Sean Hawkes</h1>
         </div>
-        <div>
-          <h3>Functions</h3>
-          <p>
-            Functions are a way of naming blocks of code to be executed. These blocks of code are declared, given a name, and any variables that are needed are identified as parameters,
-            then the block of code can be reused by calling the name given to them and passing any parameters needed in parentheses. This allows for a common action to be repeated multiple times
-            without replicating the code.
-          </p>
-        </div>
-        <div>
-          <h3>Arrays & Associative Arrays</h3>
-          <p>
-            Arrays are a data structure that allow multiple values to be stored in the same container. They can be used to store a list of strings, numbers,
-            Objects, etc. Array notation can be used to access each element using brackets, starting from index 0 for the first element.
-          </p>
-          <p class="code">
-            var arrayExample = ["this", "is", "an", "example"]; </br>
-            arrayExample[1] returns the value "is".
-          </p>
-          <p>
-            Associative arrays are arrays that use strings as keys to access elements instead of numerical indice. Javascript does not support associative arrays, but <a href="Objects/objects.html">Objects</a> and the dot notation can be used to
-            simulate associate arrays.
-            <p class="code">
-              var notValid = ["firstname" = "John", "lastname" = "Smith"];
-            </p>
-          </p>
+        <div class="text-light">
+          <h2>JavaScript - Variables, Loops, Conditional Statements, Functions, Arrays, & Associative Arrays</h2>
         </div>
       </div>
+    </div>
+    <div class="body-content container-fluid">
+      <div>
+        <section id="JSON">
+          <h3>JSON</h3>
+          <p>
+            JavaScript Object Notation, or JSON, allows for JavaScript <a href="objects.html">objects</a> to be represented as a string to store and exchange object data. JSON syntax resembles JavaScript's object literal syntax, combining data in
+            key/value pairs and
+            separating each data element by a comma. Arrays are denoted by brackets while objects are contained within braces, and there can be multiple levels of nested arrays, objects, and properties.
+            JSON strings may be "pretty-printed" to be more human-readable, but they are generated as a single-line string by default. JSON is not necessarily limited to JavaScript; many languages can interpret and process strings in the JSON format.
+          </p>
+          <p class="code code-div">
+            [<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;color: "red",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;value: "#f00"<br />
+            &nbsp;&nbsp;},<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;color: "green"<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;value: "#0f0"<br />
+            &nbsp;&nbsp;},<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;color: "blue",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;value: "#00f"<br />
+            &nbsp;&nbsp;}<br />
+            ]<br />
+          </p>
+        </section>
+        <section id="parse">
+          <h3>Parse</h3>
+          <p>
+            <span class="code">JSON.parse()</span> is a method that takes a JSON string and parses it (deserializes) to construct a JavaScript object that is contained in the object literal as described by the JSON syntax.
+            Using <span class="code">JSON.parse()</span>, it is possible to return JavaScript that was serialized to its original object form so that data can be passed between server and client in text and then reused as a data structure.
+          </p>
+          <p class="code code-div">
+            let myObject = JSON.parse(jsonString[, optional reviver]);
+          </p>
+          <a id="json-copy" href="">Click here to copy an example JSON string to use</a>
+          <div class="form-container">
+            <div class="json-input">
+              <form id="json-input">
+                <input type="text" name="json-entry" id="json-entry" placeholder="Enter a JSON string" />
+                <input type="button" onclick="createObj()" value="Submit" />
+              </form>
+              <div id="parse-content">
+                <!-- Text will be added here by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="stringify">
+          <h3>Stringify</h3>
+          <p>
+            <span class="code">JSON.stringify()</span> makes it possible to convert an object (serialize) to the JSON syntax so that it can be passed between client and server, especially via APIs. It can be called with a replacer function or array of values to replace any values that may be considered extraneous, and the string or number of characters used for whitespace can be defined to make it more readable for humans.
+          </p>
+          <p class="code code-div">
+            var APIresponse = JSON.stringify(serverDataObject[,replacer function/array[, space string/number of whitespaces]]);
+          </p>
+          <div class="form-container">
+            <div class="json-input">
+              <form id="json-form" action="">
+                <input type="text" name="street" id="street" placeholder="Enter the street" />
+                <input type="text" name="city" id="city" placeholder="Enter the city" />
+                <input type="text" name="state" id="state" placeholder="Enter the state" />
+                <input type="button" onclick="createJSON()" value="Submit" />
+              </form>
+            </div>
+            <div id="string-content">
+              <!-- Tet will be added here by JavaScript -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
 </body>
 <footer>
-  <div class="container-fluid">
+  <div class="footer-container">
     <div class="row">
-      <div class="col-sm-6">
-        <i class="fas fa-arrow-circle-left"></i><a href="">Previous Lesson</a>
+      <div class="col-md">
+        <a href="objects.html">Previous</a>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md">
         <a href="index.html">Home</a>
       </div>
-      <div class="col-sm-6">
-        <a href="">Next Lesson</a><i class="fas fa-arrow-circle-left"></i>
+      <div class="col-md">
+        <a href="">Next</a>
       </div>
     </div>
   </div>
 </footer>
+</div>
 
 </html>
