@@ -1,6 +1,6 @@
 function ajaxTest() {
-  city = document.getElementById("city").value();
-  key = document.getElementById("api-key").value();
+  city = document.getElementById("city").value;
+  key = document.getElementById("api-key").value;
   requestWeather(city, key);
 }
 
