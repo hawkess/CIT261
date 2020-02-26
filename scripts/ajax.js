@@ -13,7 +13,7 @@ function parseWeather(response) {
 
 function requestWeather(city, key) {
   var xhttp = new XMLHttpRequest();
-  var uri = "api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
+  var uri = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
   var res = encodeURI(uri);
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
