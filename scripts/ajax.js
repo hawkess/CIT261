@@ -21,4 +21,5 @@ function requestWeather(city, key) {
     }
   };
   xhttp.open("GET", uri, true);
+  xhttp.send();
 }
