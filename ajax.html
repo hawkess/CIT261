@@ -35,10 +35,43 @@
     </div>
     <div class="body-content container-fluid">
       <div>
-      <h3>AJAX</h3>
-      <p>
-        AJAX, or <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML, is a combination of technologies that allows a webpage to dynamically update as well as make and receive requests or send data without reloading. It makes use of <span class="code">XMLHttpRequest</span> (also known as XHR) to asynchronously send and request data, and <a href="dom.html">DOM manipulation</a> to modify the page after it has loaded. This has many uses, from allowing form submissions to show confirmation messages on the page to allowing for API requests to continually update the information the page displays. The specific focus of this section is on the consumption of RESTful API services via AJAX, which consists of constructing a request via GET or POST, making that request through XHR and then asynchronously waiting for the response without blocking execution of other code on the website. Once a successful code response is received, the data can then be deserialized and used to update the website as needed.
-      </p>
+        <section id="ajax">
+
+        <h3>AJAX</h3>
+        <p>
+          AJAX, or <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML, is a combination of technologies that allows a webpage to dynamically update as well as make and receive requests or send data without reloading. It makes use of <span
+            class="code">XMLHttpRequest</span> (also known as XHR) to asynchronously send and request data, and <a href="dom.html">DOM manipulation</a> to modify the page after it has loaded. This has many uses, from allowing form submissions to show
+          confirmation messages on the page to allowing for API requests to continually update the information the page displays. The specific focus of this section is on the consumption of RESTful API services via AJAX, which consists of
+          constructing a request via GET or POST, making that request through XHR and then asynchronously waiting for the response without blocking execution of other code on the website. Once a successful code response is received, the data can then
+          be deserialized and used to update the website as needed.
+        </p>
+      </section>
+      <section id="xhr">
+        <h3>XMLHttpRequest</h3>
+        <p>
+          The heart of AJAX programming, XMLHttpRequest (XHR) allows for retreiving data from a server without a page refresh. The properties of XHR objects allow access to multiple facets of the request and response: <span class="code">readyState,
+            response, responseText,</span> and <span class="code">status</span> are some of the more commonly used properties. To make a typical XMLHttpRequest, a new request object is created, and the <span class="code">onreadystatechange</span> property is used to define a condition for the action to be performed on a successful request. The <span class="code">open</span> method is then used to open the request, define the request protocol, the resource being requested, and the synchronicity. To complete the process, the request is delivered with the <span class="code">send</span> method and upon receipt of the response, the action tied to <span class="code">onreadystatechange</span> will be executed. If the request is made asynchronously, execution doesn't stop while waiting for this response which is an important consideration for any subsequent actions that might rely on the requested data..
+        </p>
+        <p class="code code-div">
+          var xhr = new XMLHttpRequest();<br />
+          xhr.onreadystatechange = function() { <br />
+          &nbsp;&nbsp;if (this.readyState == 4 && this.status = 200) {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("response-display").innerHTML = xhr.responseText;<br />
+          &nbsp;&nbsp;}<br />
+        };<br />
+          xhr.open("GET", "test.php", true);<br />
+          xhr.send();
+        </p>
+      </section>
+      <div class="form-content">
+        <form id="object-form">
+          <input type="text" name="city" id="city" placeholder="Enter a city" />
+          <input type="text" name="api-key" id="api-key" placeholder="Enter your API key" />
+          <input type="button" onclick="ajaxTest()" value="Submit" />
+        </form>
+      </div>
+      <div id="ajax-content">
+      </div>
       </div>
     </div>
 </body>
