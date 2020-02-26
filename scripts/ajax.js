@@ -16,8 +16,9 @@ function requestWeather(city, key) {
   var uri = "api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
   var res = encodeURI(uri);
   xhttp.onreadystatechange = function() {
-    console.log(this.responseText);
-    parseWeather(this.responseText);
+    if (this.readyState == 4 && this.status == 200) {
+      parseWeather(xhttp.responseText);
+    }
   };
   xhttp.open("GET", uri, true);
 }
