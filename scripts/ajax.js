@@ -8,7 +8,7 @@ function parseWeather(response) {
   console.log(response);
   var weather = JSON.parse(response);
   var display = document.getElementById("ajax-content");
-  display.innerHTML += weather.name + ": " + weather.main.temp + "&#176;F, " + weather.description;
+  display.innerHTML += weather.name + ": " + weather.main.temp + "&#176;F, " + weather[0].description;
 }
 
 function requestWeather(city, key) {
