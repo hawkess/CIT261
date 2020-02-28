@@ -16,9 +16,9 @@ function clearStorage() {
 function storageTest() {
   let formInput = document.getElementById("list-item");
   itemsArray.push(formInput.value);
+  makeList(formInput.value);
   formInput.value = "";
   localStorage.setItem("items", JSON.stringify(itemsArray));
-  makeList(formInput.value);
 }
 
 function makeList(listItem) {
