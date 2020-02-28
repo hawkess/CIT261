@@ -68,7 +68,7 @@
           <h3>Arrays & Objects</h3>
           <p>
             The Storage API only supports strings for the key/value pairs, so Objects and Arrays should be serialized using <span class="code"><a href="json.html#stringify">JSON.stringify()</a></span> before writing to storage and
-            deserialized with <span class="code"><a href="json.html#parse">JSON.parse()</a></span>. This allows <a href="objects.html#properties">properties</a> and <a href="js.html#arrays">array elements</a> to be modified and accessed as usual before being committed to storage and after retrieval from storage.
+            deserialized with <span class="code"><a href="json.html#parse">JSON.parse()</a></span>. This allows <a href="objects.html#properties">properties</a> and <a href="js.html#arrays">array elements</a> to be modified and accessed as usual before the object/array is committed to storage as a single key/value pair.
           </p>
           <form id="list-form" action="">
             <input type="text" name="list-item" id="list-item" placeholder="Enter a list item" />
@@ -79,6 +79,23 @@
               <!-- Content will be added here by JavaScript -->
             </ul>
           </div>
+          <h3>Primitive Data Types</h3>
+          <p>
+            Primitive data types are trivial to use with localStorag. Simply assign the value to a key:
+          </p>
+          <p class="code code-div">
+            localStorage.setItem("browser", "Google Chrome");<br />
+            localStorage.setItem("version", "80.0.3987.116");<br />
+            localStorage.setItem("max_storage", 5120);
+          </p>
+          <p>
+            And read them back the same way:
+          </p>
+          <p class="code code-div">
+            let currentBrowser = localStorage.getItem("browser");<br />
+            let currentVersion = localStorage.getItem("version");<br />
+            let maxStorage = localStorage.getItem("max_storage");
+          </p>
       </div>
 </body>
 <footer>
