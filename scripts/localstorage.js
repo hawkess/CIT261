@@ -1,8 +1,9 @@
-var itemObj = JSON.parse(localStorage.getItem("list-items"));
-
-itemObj.forEach(item => {
-  makeList(item);
-});
+window.onload = function() {
+  var itemObj = JSON.parse(localStorage.getItem("list-items"));
+  itemObj.forEach(item => {
+    makeList(item);
+  });
+};
 
 function clearStorage() {
   localStorage.clear();
