@@ -18,7 +18,7 @@ function storageTest() {
   itemsArray.push(formInput.value);
   formInput.value = "";
   localStorage.setItem("items", JSON.stringify(itemsArray));
-  makeList(newItem);
+  makeList(formInput.value);
 }
 
 function makeList(listItem) {
