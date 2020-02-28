@@ -1,8 +1,7 @@
 var itemsArray = localStorage.getItem("list-items") ? JSON.parse(localStorage.getItem("list-items")) : [];
 
 window.onload = function() {
-  var itemObj = JSON.parse(localStorage.getItem("list-items"));
-  itemObj.forEach(item => {
+  itemsArray.forEach(item => {
     makeList(item);
   });
 };
@@ -15,8 +14,9 @@ function clearStorage() {
 }
 
 function storageTest() {
-  let newItem = document.getElementById("list-item").value;
-  itemsArray.push(newItem);
+  let formInput = document.getElementById("list-item");
+  itemsArray.push(formInput.value);
+  formInput.value = "";
   localStorage.setItem("items", JSON.stringify(itemsArray));
   makeList(newItem);
 }
