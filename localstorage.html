@@ -68,11 +68,11 @@
           <h3>Arrays & Objects</h3>
           <p>
             The Storage API only supports strings for the key/value pairs, so Objects and Arrays should be serialized using <span class="code"><a href="json.html#stringify">JSON.stringify()</a></span> before writing to storage and
-            deserialized with <span class="code"><a href="json.html#parse">JSON.parse()</a></span>. Prior to being stored, <a href="objects.html#properties">properties</a> and <a href="js.html#arrays">array elements</a> can be modified and accessed as usual.
+            deserialized with <span class="code"><a href="json.html#parse">JSON.parse()</a></span>. This allows <a href="objects.html#properties">properties</a> and <a href="js.html#arrays">array elements</a> to be modified and accessed as usual before being committed to storage and after retrieval from storage.
           </p>
           <form id="json-form" action="">
             <input type="text" name="list-item" id="list-item" placeholder="Enter a list item" />
-            <input type="button" onclick="storageTest()" value="Submit" />
+            <input type="button" onclick="storageTest()" value="Add Item" />
             <input type="button" onclick="clearStorage()" value="Clear All" />
           </form>
           <div id="list-content">
