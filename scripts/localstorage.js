@@ -1,5 +1,4 @@
 var itemsArray = localStorage.getItem("list-items") ? JSON.parse(localStorage.getItem("list-items")) : [];
-const ul = document.getElementById("todo-list");
 
 window.onload = function() {
   itemsArray.forEach(item => {
@@ -8,6 +7,7 @@ window.onload = function() {
 };
 
 function clearStorage() {
+  const ul = document.getElementById("todo-list");
   localStorage.clear();
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
@@ -23,6 +23,7 @@ function storageTest() {
 }
 
 function makeList(listItem) {
+  const ul = document.getElementById("todo-list");
   let li = document.createElement("li");
   li.textContent = listItem;
   ul.appendChild(li);
