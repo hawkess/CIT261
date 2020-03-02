@@ -35,7 +35,46 @@
     </div>
     <div class="body-content container-fluid">
       <div>
-        <section id="local-storage">
+        <section id="dom">
+          <h3>Document Object Model</h3>
+          <p>
+            The Document Object Model, or DOM, is a tree hierarchy representation of an HTML document where each branch contains a node that represents the document, an element, or content as an object that makes it possible to be
+            manipulated programmatically with a language like JavaScript. Nodes can be selected, created, appended, removed, have their content manipulated, etc. using the DOM APIs various interfaces.
+          </p>
+          <p>
+            Some of the more common DOM manipulation methods used include:
+          </p>
+          <p>
+            Selecting an element by an id in the HTML<br />
+            <span class="code code-div">document.getElementById("elementID");</span>
+          </p>
+          <p>
+            Creating an new element with a specified tag<br />
+            <span class="code code-div">document.createElement("tagName");</span>
+          </p>
+          <p>
+            Appending a node to a parent node<br />
+            <span class="code code-div">parentName.appendChild("childName");</span>
+          </p>
+          Allows for reading or modifying the HTML markup contained in the element<br />
+          <span class="code code-div">element.innerHTML</span>
+          </p>
+          Adding an event listener (onclick, onload, onfocus, etc.) to an element<br />
+          <span class="code code-div">element.addEventListener("eventType", handler);</span>
+          </p>
+          <p>
+            Using these methods, various aspects of the document can be dynamically modified in-place, making the DOM API very useful for having a page respond to user interaction or changes in data.
+          </p>
+        </section>
+        <div class="form-content">
+          <form id="dom-form">
+            <input type="button" id="run-demo" onclick="domTest()" value="Run Demo" />
+            <input type="button" id="style-demo" onclick="changeStyle()" value="Change Style" />
+            <input type="button" id="revert-demo" onclick="revert()" value="Clear" />
+          </form>
+        </div>
+        <div id="dom-content">
+        </div>
       </div>
 </body>
 <footer>

@@ -1,11 +1,11 @@
 window.onload = function() {
-  var a = document.getElementById("json-copy");
+  const a = document.getElementById("json-copy");
   a.onclick = function() {
     if (window.clipboardData && window.clipboardData.setData) {
       return clipboardData.setData("Text", text);
 
     } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
-      var textarea = document.createElement("textarea");
+      let textarea = document.createElement("textarea");
       textarea.textContent = '{ "firstName": "John", "lastName": "Smith", "isAlive": true, "age": 27, "address": { "streetAddress": "21 2nd Street", "city": "New York", "state": "NY", "postalCode": "10021-3100" }, "phoneNumbers": [ { "type": "home", "number": "212 555-1234" }, { "type": "office", "number": "646 555-4567" }, { "type": "mobile", "number": "123 456-7890" } ], "children": [], "spouse": null }';
       textarea.style.position = "fixed";
       document.body.appendChild(textarea);
@@ -25,7 +25,7 @@ window.onload = function() {
 
 
 function createJSON() {
-  var myObj = {
+  let myObj = {
     "street": null,
     "city": null,
     "state": null
@@ -37,13 +37,13 @@ function createJSON() {
 }
 
 function createObj() {
-  var myJSON = document.getElementById("json-entry").value;
-  var parsedObj = JSON.parse(myJSON);
+  const myJSON = document.getElementById("json-entry").value;
+  let parsedObj = JSON.parse(myJSON);
   printObj(parsedObj);
 }
 
 function process(key, value) {
-    var display = document.getElementById("parse-content");
+    const display = document.getElementById("parse-content");
     if (typeof(value) != "object")
       display.innerHTML += key + ": " + value + "<br />";
     else
@@ -52,7 +52,7 @@ function process(key, value) {
 }
 
 function traverse(obj, func) {
-    for (var key in obj) {
+    for (let key in obj) {
         func.apply(this, [key, obj[key]]);
         if (obj[key] !== null && typeof(obj[key]) == "object") {
             traverse(obj[key], func);
@@ -66,11 +66,11 @@ function printObj(parsedObj) {
 
 function printJSON(json)
 {
-  var display = document.getElementById("string-content");
-  var street = document.getElementById("street").value;
-  var city = document.getElementById("city").value;
-  var state = document.getElementById("state").value;
-  var myAddress = new Object();
+  const display = document.getElementById("string-content");
+  let street = document.getElementById("street").value;
+  let city = document.getElementById("city").value;
+  let state = document.getElementById("state").value;
+  let myAddress = new Object();
   myAddress.street = street;
   myAddress.city = city;
   myAddress.state = state;
