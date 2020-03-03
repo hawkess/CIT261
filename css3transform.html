@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>CIT 261 JavaScript Events</title>
+  <title>CIT 261 Classes</title>
 
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/transform.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Scripts -->
-  <script src="scripts/events.js"></script>
+  <script src="scripts/classes.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -30,35 +30,39 @@
           <h1 class="heading-lg">Sean Hawkes</h1>
         </div>
         <div class="text-light">
-          <h2>JavaScript Events</h2>
+          <h2>CSS Transitions, Transforms, & Animations</h2>
         </div>
       </div>
     </div>
     <div class="body-content container-fluid">
       <div>
-        <section id="events">
-          <h3>Events</h3>
+        <section id="classes">
+          <h3>Transitions</h3>
           <p>
-            The Events interface allows for JavaScript to trigger actions in response to events that take place in a document. There are a large number of events pertaining to various aspects of a document, including mouse events, focus events,
-            animation events, form events, etc. A full list of events can be found <a href="https://developer.mozilla.org/en-US/docs/Web/Events">here</a>. Coupled with an <a href="dom.html#dom">eventListener</a>, these events form the framework to
-            tie JavaScript functions to the elements of the page and make it interactive and respond to changes in state.
+          CSS provides a way to create transitions that control the progression and speed of change between two different states of an element. The basic syntax to set all the properties for a transition at once is:<br />
+          <span class="code code-div">transition: [property] [duration] [timing-function] [delay]</span><br />
+          However, the transition properties can be set individually and can define multiple transitions in a single line.
           </p>
-        </section>
-        <div id="event-content">
-        </div>
+          <p>
+            Transition-property selects the element's CSS style property to be modified.<br />
+          </p>
+          <p>
+            Transition-duration defines the length of time the transition between the two states will take. Multiple timings can be listed and will apply in order to properties.
+          </p>
+
       </div>
 </body>
 <footer>
   <div class="footer-container">
     <div class="row">
       <div class="col-md">
-        <a href="css3classes.html">Previous</a>
+        <a href="dom.html">Previous</a>
       </div>
       <div class="col-md">
         <a href="index.html">Home</a>
       </div>
       <div class="col-md">
-        <a href="css3transform.html">Next</a>
+        <a href="events.html">Next</a>
       </div>
     </div>
   </div>
