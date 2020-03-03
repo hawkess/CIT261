@@ -1,0 +1,24 @@
+.hidden
+{
+  visibility: hidden;
+}
+
+.neutral-bg
+{
+  background-color: #E7E6D5;
+}
+
+.primary-bg
+{
+  background-color: #ff4c68;
+}
+
+.text-light
+{
+  color: #fff;
+}
+
+.text-primary
+{
+  color: #ff4c68;
+}
