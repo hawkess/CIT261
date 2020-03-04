@@ -2,16 +2,16 @@ const prefix = ["webkit", "moz", "o", ""];
 var hovered = false;
 
 window.onload = function() {
-  const div = document.getElementById("anim-content");
   const animdiv = document.getElementById("anim-div");
 
   PrefixedEvent(animdiv, "AnimationEnd", AnimationListener);
-  div.addEventListener('mouseover', function() {
+  animdiv.addEventListener('mouseover', function() {
     if (!animdiv.classList.contains("rotatein")) {
       animdiv.classList.add("rotatein");
     }
   });
 }
+
 
 function PrefixedEvent(element, type, callback) {
   for (let p = 0; p < prefix.length; p++) {
@@ -34,5 +34,4 @@ function AnimationListener(e) {
   } else if (e.animationName == "rotateout") {
     animdiv.classList.remove("rotateout");
   }
-
 }
