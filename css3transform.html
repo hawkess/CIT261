@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Scripts -->
-  <script src="scripts/classes.js"></script>
+  <script src="scripts/transform.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -36,33 +36,176 @@
     </div>
     <div class="body-content container-fluid">
       <div>
-        <section id="classes">
+        <section id="transitions">
           <h3>Transitions</h3>
           <p>
-          CSS provides a way to create transitions that control the progression and speed of change between two different states of an element. The basic syntax to set all the properties for a transition at once is:<br />
-          <span class="code code-div">transition: [property] [duration] [timing-function] [delay]</span><br />
-          However, the transition properties can be set individually and can define multiple transitions in a single line.
+            CSS provides a way to create transitions that control the progression and speed of change between two different states of an element. The basic syntax to set all the properties for a transition at once is:<br />
+            <span class="code code-div">transition: [property] [duration] [timing-function] [delay]</span><br />
+            However, the transition properties can be set individually and can define multiple transitions in a single line.
           </p>
           <p>
-            Transition-property selects the element's CSS style property to be modified.<br />
+            <span class="code">transition-property</span> defines the element's CSS style property to be modified. Multiple CSS properties can be listed and other transition properties will apply to these in sequence.
           </p>
           <p>
-            Transition-duration defines the length of time the transition between the two states will take. Multiple timings can be listed and will apply in order to properties.
+            <span class="code">transition-duration</span> defines the length of time the transition between the two states will take. Multiple timings can be listed and will apply in order to properties listed.
           </p>
-
+          <p>
+            <span class="code">transition-timing-function</span> defines how the transition states are interpolated with the following options:<br />
+            <ul>
+              <li>
+                ease: speeds up towards the middle, slows down at the end
+              </li>
+              <li>
+                linear: even speed throughout
+              </li>
+              <li>
+                ease-in: start is slow, speeds up towards the end
+              </li>
+              <li>
+                ease-out: start is fast, slows down towards the end
+              </li>
+              <li>
+                ease-in-out: similar to ease, slow in the beginning and end, speeds up towards the middle
+              </li>
+              <li>
+                cubic-bezier: a custom defined timing based on a cubic-Bezier curve with values between 0 and 1
+              </li>
+              <li>
+                steps: define a number of stops along the transition for a defined duration with jump timing
+                <ul>
+                  <li>
+                    jump-start: first jump happens at start
+                  </li>
+                  <li>
+                    jump-end: last jump happens at end
+                  </li>
+                  <li>
+                    jump-none: no jump at start or end
+                  </li>
+                  <li>
+                    jump-both: jump at both start and end
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <span class="code">transition-delay</span> defines the duration before the transition begins once the property's value has changed.
+          </p>
+          <p>
+            Combining all of these into a transition might look something like this:<br />
+            <div class="code code-div">.transition-div<br />
+              {<br />
+              &nbsp;&nbsp;background-color: red;<br />
+              &nbsp;&nbsp;transition: background-color 2s linear 0.5s;<br />
+              }<br />
+              transition-div1<br />
+              {<br />
+              &nbsp;&nbsp;background-color: blue<br />
+              &nbsp;&nbsp;transition: background-color 2s linear 0.5s<br />
+              }
+            </div>
+          </p>
+        </section>
+        <section id="transforms">
+          <h3>Transforms</h3>
+          <p>
+            CSS transforms can rotate, translate, skew, and scale an element to modify its appearance with each transform having an X, Y, and Z component, making it possible to give elements the illusion of a third dimension. Multiple dimensions of
+            the same <span class="code">transform-function</span> can be defined in a single shorthand statement, and multiple functions can be chained together in the same transform property. A full list of all of the available transforms and
+            accompanying syntax can be found <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">here</a>.
+          </p>
+          <p>
+            An example transform may look something like this:
+            <div class="code code-div">
+              transform: rotate(180deg) perspective(200px);
+            </div>
+          </p>
+        </section>
+        <section id="animations">
+          <h3>Animations</h3>
+          <p>
+            CSS animations make use of keyframes and animation properties to define a gradual series of changes in any number of style properties that can also include transforms and transitions. Though animations and transitions both define how an
+            element changes, transitions react to changes in a property and define how that change should look whereas animations actively change properties. Some pre-defined animations exist in the form of two
+            <span class="code">animation-name</span> options: <span class="code">slide</span> and <span class="code">bounce</span>. Creating keyframe steps and binding the keyframe to an element with a custom <span class="code">animation-name</span>
+            form the
+            foundation of the animation framework. A much more in-depth look at the animation property and its many options is available <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">here</a>.
+          </p>
+          <p>
+            An example of an animation and the accompanying element it is applied to:<br />
+            <div class="code code-div">
+              @keyframes example <br />
+              { <br />
+              &nbsp;&nbsp;0% { width: 100px; }<br />
+              &nbsp;&nbsp;25% { width: 200px; }<br />
+              &nbsp;&nbsp;50% { width: 300px; }<br />
+              &nbsp;&nbsp;75% { width: 400px; }<br />
+              &nbsp;&nbsp;100% { width: 500px; }<br />
+              }<br /><br />
+              div <br />
+              { <br />
+              &nbsp;&nbsp;background-color: red;<br />
+              &nbsp;&nbsp;height: 100px;<br />
+              &nbsp;&nbsp;width: 0px;<br />
+              &nbsp;&nbsp;animation-name: example;<br />
+              &nbsp;&nbsp;animation-duration: 2s;<br />
+              &nbsp;&nbsp;animation-delay: 0.5s;<br />
+              }
+            </div>
+          </p>
+        </section>
+        <section id="trigger">
+          <h3>Triggering Transitions, Transforms and Animations with JavaScript</h3>
+          <p>
+            Triggering a transition, transform, or animation with JavaScript is as simple as adding a class that contains the properties of the transition, transform, or animation to an element.
+          </p>
+          <div class="code code-div">
+            .box <br />
+            {<br />
+            &nbsp;&nbsp;background-color: red;<br />
+            &nbsp;&nbsp;height: 100px;<br />
+            &nbsp;&nbsp;width: 100px;<br />
+            &nbsp;&nbsp;transition: all 0.5s ease-in;<br />
+            }<br /><br />
+            .animated<br />
+            { <br />
+            &nbsp;&nbsp;animation: rotate 2s infinite linear;<br />
+            }<br /><br />
+            @keyframes rotate {<br />
+            &nbsp;&nbsp;from<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;transform: rotateZ(0deg);<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;to<br />
+            &nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;transform: rotateZ(360deg);<br />
+            &nbsp;&nbsp;}<br />
+            }
+          </div>
+          <p>
+            By adding the <span class="code">animated</span> class in the previous example to an element, the animation defined by <span class="code">rotate</span> would be triggered. Likewise, removing the class would stop the animation.
+          </p>
+        </section>
+        <p>
+          Mouse over the example below:
+        </p>
+        <div id="anim-content">
+          <div id="anim-div" class="box">
+          </div>
+        </div>
       </div>
+    </div>
 </body>
 <footer>
   <div class="footer-container">
     <div class="row">
       <div class="col-md">
-        <a href="dom.html">Previous</a>
+        <a href="events.html">Previous</a>
       </div>
       <div class="col-md">
         <a href="index.html">Home</a>
       </div>
       <div class="col-md">
-        <a href="events.html">Next</a>
+        <a href="html5tags.html">Next</a>
       </div>
     </div>
   </div>

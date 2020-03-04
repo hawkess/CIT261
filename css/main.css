@@ -112,3 +112,15 @@ form
 {
   padding: 15px 0;
 }
+
+@media only screen and (max-width: 800px)
+{
+  .container-fluid
+  {
+    padding: 0 5%;
+  }
+  .content-container
+  {
+    margin: 0;
+  }
+}
