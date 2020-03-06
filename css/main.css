@@ -3,7 +3,6 @@
   margin-top: 5%;
 }
 
-
 .code
 {
   font-family: monospace;
@@ -69,6 +68,11 @@
   visibility: hidden;
 }
 
+.media
+{
+  padding: 20px 0;
+}
+
 .primary-bg
 {
   background-color: #ff4c68;
@@ -108,9 +112,21 @@ body a
   color: #ff4c68;
 }
 
+canvas
+{
+  border: 1px solid black;
+}
+
 form
 {
   padding: 15px 0;
+}
+
+#event-content
+{
+  width: 100px;
+  height: 100px;
+  background-color: #FF836E;
 }
 
 @media only screen and (max-width: 800px)
