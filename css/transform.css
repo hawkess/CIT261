@@ -10,34 +10,34 @@
 
 .rotatein
 {
-  -webkit-animation: 2s rotatein 0s 1 normal forwards;
-  -moz-animation: 2s rotatein 0s 1 normal forwards;
-  -o-animation: 2s rotatein 0s 1 normal forwards;
-  animation: 2s rotatein 0s 1 normal forwards;
+  -webkit-animation: 1s rotatein 0s 1 normal forwards;
+  -moz-animation: 1s rotatein 0s 1 normal forwards;
+  -o-animation: 1s rotatein 0s 1 normal forwards;
+  animation: 1s rotatein 0s 1 normal forwards;
 }
 
 .rotateout
 {
-  -webkit-animation: 2s rotateout 0s 1 normal forwards;
-  -moz-animation: 2s rotateout 0s 1 normal forwards;
-  -o-animation: 2s rotateout 0s 1 normal forwards;
-  animation: 2s rotateout 0s 1 normal forwards;
+  -webkit-animation: 1s rotateout 0s 1 normal forwards;
+  -moz-animation: 1s rotateout 0s 1 normal forwards;
+  -o-animation: 1s rotateout 0s 1 normal forwards;
+  animation: 1s rotateout 0s 1 normal forwards;
 }
 
 .expandin
 {
-  -webkit-animation: 2s expandin 0s 1 normal forwards;
-  -moz-animation: 2s expandin 0s 1 normal forwards;
-  -o-animation: 2s expandin 0s 1 normal forwards;
-  animation: 2s expandin 0s 1 normal forwards;
+  -webkit-animation: 1s expandin 0s 1 normal forwards;
+  -moz-animation: 1s expandin 0s 1 normal forwards;
+  -o-animation: 1s expandin 0s 1 normal forwards;
+  animation: 1s expandin 0s 1 normal forwards;
 }
 
 .expandout
 {
-  -webkit-animation: 2s expandout 0s 1 normal forwards;
-  -moz-animation: 2s expandout 0s 1 normal forwards;
-  -o-animation: 2s expandout 0s 1 normal forwards;
-  animation: 2s expandout 0s 1 normal forwards;
+  -webkit-animation: 1s expandout 0s 1 normal forwards;
+  -moz-animation: 1s expandout 0s 1 normal forwards;
+  -o-animation: 1s expandout 0s 1 normal forwards;
+  animation: 1s expandout 0s 1 normal forwards;
 }
 
 @-webkit-keyframes rotatein
