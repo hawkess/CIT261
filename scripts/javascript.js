@@ -1,16 +1,17 @@
-function loopTest()
-{
-  let count = document.getElementById("loop-count").value;
+function loopTest() {
+  let input = document.getElementById("loop-count").value;
   let display = document.getElementById("loop-content");
-  for (let i = 0; i < count; ++i)
-  {
-    display.innerHTML += (i + " ");
-    display.setAttribute("style", "visibility: visible;");
+  if (isNaN(input)) {
+    display.innerHTML = "'" + input + "'" + " is not a valid number.";
+  } else {
+    for (let i = 0; i < count; ++i) {
+      display.innerHTML += (i + " ");
+      display.setAttribute("style", "visibility: visible;");
+    }
   }
 }
 
-function arrayTest()
-{
+function arrayTest() {
   let str = document.getElementById("array-input").value;
   let arr = str.split(", ");
   let len = arr.length;
