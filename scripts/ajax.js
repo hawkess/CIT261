@@ -5,7 +5,6 @@ function ajaxTest() {
 }
 
 function parseWeather(response) {
-  console.log(response);
   let weather = JSON.parse(response);
   let display = document.getElementById("ajax-content");
   display.innerHTML += "Current weather in " + weather.name + ": <br />" + weather.main.temp + "&#176;F, " + weather.weather[0].description;
