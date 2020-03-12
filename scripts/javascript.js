@@ -4,7 +4,7 @@ function loopTest() {
   if (isNaN(input)) {
     display.innerHTML = "'" + input + "'" + " is not a valid number.";
   } else {
-    for (let i = 0; i < count; ++i) {
+    for (let i = 0; i < input; ++i) {
       display.innerHTML += (i + " ");
       display.setAttribute("style", "visibility: visible;");
     }
