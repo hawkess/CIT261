@@ -127,7 +127,7 @@
             }
           </p>
           <p class="code code-div">
-            function Bird(species, color, area, wingspan, area, canFly)<br / />
+            function Bird(species, color, area, wingspan, canFly)<br / />
             {<br />
             &nbsp;&nbsp;Animal.call(this, species, color, area);<br />
             &nbsp;&nbsp;this.wingspan = wingspan;<br />
@@ -136,7 +136,7 @@
             }
           </p>
           <p class="code code-div">
-            var buzzard = new Bird("Buteo buteo", "Brown", "100cm", "Central Europe", true);<br />
+            var buzzard = new Bird("Buteo buteo", "Brown", "Central Europe", "100cm", true);<br />
           </p>
           <p>
             Through inheritance, a new object named <span class="code">buzzard</span> has been created with the Bird constructor that calls the Animal constructor, initializing the Bird object with all of the values from the Animal object constructor
